@@ -22,18 +22,26 @@ export default function Skills() {
       </section>
 
       {/* PROFICIENCY GRID */}
-      <section className="px-6 md:px-10 py-16 border-t border-line">
-        <div className="mx-auto max-w-[1400px] grid md:grid-cols-2 gap-x-16">
-          {skillGroups.map((group, gi) => (
-            <Reveal key={group.title} delay={(gi % 2) * 0.08} className="mb-14">
-              <h2 className="font-display text-xl font-medium mb-2 text-accent">{group.title}</h2>
-              <div className="divide-y divide-line">
-                {group.skills.map((s, i) => (
-                  <SkillBar key={s.name} name={s.name} level={s.level} delay={i * 0.03} />
-                ))}
-              </div>
-            </Reveal>
-          ))}
+      <section className="px-6 md:px-10 py-20 md:py-28 border-t border-line">
+        <div className="mx-auto max-w-[1400px]">
+          <SectionTag index="( 01 )" label="Proficiency" />
+          <h2 className="font-display text-4xl sm:text-5xl font-medium mt-6 mb-12">Where the depth is.</h2>
+
+          <div className="grid md:grid-cols-2 gap-px bg-line border border-line rounded-2xl overflow-hidden">
+            {skillGroups.map((group, gi) => (
+              <Reveal key={group.title} delay={(gi % 2) * 0.06} className="bg-ink p-7 sm:p-8">
+                <div className="flex items-baseline gap-3 mb-5">
+                  <span className="font-mono text-xs text-accent">{String(gi + 1).padStart(2, "0")}</span>
+                  <h3 className="font-display text-lg font-medium">{group.title}</h3>
+                </div>
+                <div className="divide-y divide-line">
+                  {group.skills.map((s, i) => (
+                    <SkillBar key={s.name} name={s.name} level={s.level} delay={i * 0.03} />
+                  ))}
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
