@@ -3,7 +3,7 @@ import { SiGithub } from "react-icons/si";
 import { motion } from "framer-motion";
 
 const GITHUB_USER = "bijay-odyssey";
-const FALLBACK = { repos: 45, stars: 30, followers: 6, languages: ["Python", "Jupyter Notebook", "HTML", "Java", "PHP"] };
+const FALLBACK = { repos: 49, stars: 62, followers: 6, languages: ["Python", "Jupyter Notebook", "HTML", "Java", "PHP"] };
 
 export default function GithubStats() {
   const [data, setData] = useState(null);

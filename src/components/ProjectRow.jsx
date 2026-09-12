@@ -3,11 +3,7 @@ import { motion } from "framer-motion";
 
 export default function ProjectRow({ project, index }) {
   return (
-    <motion.a
-      href={project.link}
-      target="_blank"
-      rel="noopener noreferrer"
-      data-cursor-hover
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
@@ -18,12 +14,18 @@ export default function ProjectRow({ project, index }) {
         {String(index + 1).padStart(2, "0")}
       </span>
 
-      <div className="md:col-span-5">
+      <a
+        href={project.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-cursor-hover
+        className="md:col-span-5 after:absolute after:inset-0"
+      >
         <h3 className="font-display text-xl sm:text-2xl font-medium group-hover:text-accent transition-colors">
           {project.title}
         </h3>
         <p className="mt-2 text-sm text-muted max-w-md line-clamp-2">{project.body}</p>
-      </div>
+      </a>
 
       <div className="md:col-span-4 flex flex-wrap gap-2">
         {project.stack.slice(0, 4).map((s) => (
@@ -34,6 +36,17 @@ export default function ProjectRow({ project, index }) {
       </div>
 
       <div className="md:col-span-2 flex items-center justify-between md:justify-end gap-4">
+        {project.kaggleLink && (
+          <a
+            href={project.kaggleLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cursor-hover
+            className="relative z-10 font-mono text-[11px] text-muted hover:text-accent border border-line-strong hover:border-accent rounded-full px-2.5 py-1 transition-colors"
+          >
+            Kaggle
+          </a>
+        )}
         {project.stars > 0 && (
           <span className="flex items-center gap-1 text-xs text-muted font-mono">
             <Star size={12} className="fill-current" /> {project.stars}
@@ -43,6 +56,6 @@ export default function ProjectRow({ project, index }) {
           <ArrowUpRight size={16} />
         </span>
       </div>
-    </motion.a>
+    </motion.div>
   );
 }

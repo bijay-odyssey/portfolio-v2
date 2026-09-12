@@ -161,7 +161,7 @@ export default function Home() {
               <h2 className="font-display text-4xl sm:text-5xl font-medium mt-6">Featured projects.</h2>
             </div>
             <Link to="/projects" data-cursor-hover className="inline-flex items-center gap-2 text-sm font-medium hover:text-accent transition-colors">
-              View all 14+ projects <ArrowUpRight size={16} />
+              View all 17+ projects <ArrowUpRight size={16} />
             </Link>
           </div>
 

@@ -21,10 +21,10 @@ export default function Projects() {
         <div className="mx-auto max-w-[1400px]">
           <SectionTag label="Projects & work" />
           <h1 className="font-display font-medium leading-[0.95] tracking-tight text-[12vw] sm:text-[7vw] lg:text-[5.5vw] mt-8 max-w-4xl">
-            One production platform. Fourteen open experiments.
+            One production platform. Seventeen open experiments.
           </h1>
           <p className="text-muted max-w-xl mt-6 text-lg">
-            A production AI platform I architected end to end, plus 14+ open-source projects across RAG, machine
+            A production AI platform I architected end to end, plus 17+ open-source projects across RAG, machine
             learning, NLP, and infra — every one with source on GitHub.
           </p>
         </div>
@@ -108,7 +108,6 @@ export default function Projects() {
             <div className="flex gap-8 font-mono text-sm">
               <div><span className="text-accent text-xl font-semibold">{kaggleStats.notebooks}</span> notebooks</div>
               <div><span className="text-accent text-xl font-semibold">{kaggleStats.upvotes}</span> upvotes</div>
-              <div><span className="text-accent text-xl font-semibold">{kaggleStats.forks}</span> forks</div>
             </div>
           </div>
 

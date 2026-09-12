@@ -14,9 +14,9 @@ export const profile = {
   },
   stats: [
     { value: "6", label: "Platform capabilities" },
-    { value: "20+", label: "ML projects" },
-    { value: "45", label: "GitHub repos" },
-    { value: "23", label: "Kaggle notebooks" },
+    { value: "17+", label: "Open-source projects" },
+    { value: "49", label: "GitHub repos" },
+    { value: "35", label: "Kaggle notebooks" },
   ],
 };
 
@@ -143,6 +143,38 @@ export const flagship = {
 export const projectCategories = ["All", "AI/RAG", "Machine Learning", "NLP", "Web", "Infra"];
 
 export const projects = [
+  {
+    title: "edaprep — Explainable ML Preprocessing",
+    featured: true,
+    categories: ["Machine Learning"],
+    stack: ["Python", "pandas", "scikit-learn", "SciPy"],
+    body: "A leakage-safe EDA and preprocessing library for pandas that explains every decision it makes — published to PyPI, tested on Python 3.9–3.13 across Linux, macOS, and Windows. My most-starred repo.",
+    details: [
+      "Infers a semantic column type instead of trusting dtype — catches the zip-code-as-number failure mode that select_dtypes misses",
+      "Structurally prevents train/test leakage: every statistic is fit on training data alone, by construction, not convention",
+      "An explainable planner prints its reasoning for each transform — why median over mean, why log1p, why target-encode a column",
+      "Three analysis depths (quick / standard / deep), the deepest adding VIF and Benjamini-Hochberg-adjusted significance tests",
+      "Two runnable companion notebooks on Kaggle demonstrate real leakage bugs it catches — no install required",
+    ],
+    link: "https://github.com/bijay-odyssey/edaprep",
+    stars: 11,
+    kaggleLink: "https://www.kaggle.com/code/bijaybeezoe/every-preprocessing-decision-with-its-reason",
+  },
+  {
+    title: "Intelli-Oppo — Adversarial Debate Engine",
+    featured: true,
+    categories: ["AI/RAG", "NLP"],
+    stack: ["Python", "Groq", "CLI"],
+    body: "A debate engine that always argues the opposite of whatever you claim, without ever fabricating a counter-argument or contradicting itself when you concede.",
+    details: [
+      "Two formal invariants make unlimited opposition logically consistent: it attacks the metric, scope, or burden of proof — never the truth value",
+      "Every verdict carries an explicit ⟨metric, domain, horizon⟩ scope, so a flipped position is a partition of the claim space, not a contradiction",
+      "A /ledger command checks every commitment the engine has made against every other one for consistency",
+      "Groq-powered, with CI and a test suite guarding the consistency invariants",
+    ],
+    link: "https://github.com/bijay-odyssey/Intelli-oppo",
+    stars: 0,
+  },
   {
     title: "The Sect — Task-Orchestration Framework",
     featured: true,
@@ -305,6 +337,20 @@ export const projects = [
     link: "https://github.com/bijay-odyssey/Unsupervised-Learning",
     stars: 5,
   },
+  {
+    title: "Smart Web Scraper",
+    categories: ["AI/RAG", "Web"],
+    stack: ["Python", "Groq", "Tavily / Brave"],
+    body: "A search agent that answers a question instead of returning ten links — searches the web, reads the actual pages, and synthesizes a cited answer via Groq, built as infrastructure any tool-calling agent can call directly.",
+    details: [
+      "Tiered backend chain (Tavily / Brave APIs, falling back to DuckDuckGo / Bing scraping) with relevance re-ranking",
+      "A server-rendering fallback for JS-heavy pages a plain HTTP request can't see through",
+      "Ships as a CLI, a --json mode, and an importable tool with an OpenAI-style function-calling schema",
+      "Disk-caches results so repeat or near-duplicate queries don't re-hit the same backends",
+    ],
+    link: "https://github.com/bijay-odyssey/smart-web-scraper",
+    stars: 1,
+  },
 ];
 
 export const kaggleNotebooks = [
@@ -312,33 +358,33 @@ export const kaggleNotebooks = [
     title: "Medical Insurance Forecast",
     body: "Predicting medical insurance charges with regression — my most-upvoted notebook.",
     tag: "Regression",
-    upvotes: 7,
+    upvotes: 8,
     link: "https://www.kaggle.com/code/bijaybeezoe/medical-insurance-forecast",
   },
   {
-    title: "Retail Price Optimization",
+    title: "Retail Price Optimization & Demand Modeling",
     body: "Competition-aware price optimization with Random Forest and SHAP-driven business insight.",
     tag: "Optimization",
+    upvotes: 7,
+    link: "https://www.kaggle.com/code/bijaybeezoe/retail-price-optimization-demand-modeling",
+  },
+  {
+    title: "UnsupervisedAnomalyDetection Using IsolationForest",
+    body: "Unsupervised anomaly detection for fraud using Isolation Forest on highly imbalanced data.",
+    tag: "Anomaly",
     upvotes: 5,
-    link: "https://www.kaggle.com/bijaybeezoe/code",
+    link: "https://www.kaggle.com/code/bijaybeezoe/unsupervisedanomalydetection-using-isolationforest",
   },
   {
     title: "IEEE-CIS Fraud Detection EDA",
     body: "Exploratory analysis and feature insight across 1M+ imbalanced transaction records.",
     tag: "EDA",
-    upvotes: 4,
-    link: "https://www.kaggle.com/bijaybeezoe/code",
-  },
-  {
-    title: "Credit Card Fraud · Isolation Forest",
-    body: "Unsupervised anomaly detection for fraud using Isolation Forest on highly imbalanced data.",
-    tag: "Anomaly",
-    upvotes: 4,
-    link: "https://www.kaggle.com/bijaybeezoe/code",
+    upvotes: 5,
+    link: "https://www.kaggle.com/code/bijaybeezoe/ieee-cis-fraud-detection-eda",
   },
 ];
 
-export const kaggleStats = { notebooks: 23, upvotes: 34, forks: 100 };
+export const kaggleStats = { notebooks: 35, upvotes: 62 };
 
 export const skillGroups = [
   {
