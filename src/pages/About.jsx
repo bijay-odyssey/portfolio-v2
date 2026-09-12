@@ -25,7 +25,7 @@ export default function About() {
               Contact me <ArrowUpRight size={18} />
             </MagneticButton>
             <a
-              href="/assets/resume.pdf"
+              href={`${import.meta.env.BASE_URL}assets/resume.pdf`}
               data-cursor-hover
               className="inline-flex items-center gap-2 rounded-full border border-line-strong px-6 py-3.5 font-medium hover:border-accent hover:text-accent transition-colors"
             >

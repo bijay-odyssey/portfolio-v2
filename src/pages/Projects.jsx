@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ArrowUpRight, ArrowUp } from "lucide-react";
 import { flagship, projectCategories, projects, kaggleNotebooks, kaggleStats } from "../data/content.js";
 import Reveal from "../components/Reveal.jsx";
@@ -40,13 +41,13 @@ export default function Projects() {
                 <h2 className="font-display text-3xl sm:text-4xl font-medium">{flagship.title}</h2>
                 <p className="font-mono text-xs uppercase tracking-widest text-accent mt-2">{flagship.meta}</p>
               </div>
-              <a
-                href="/about"
+              <Link
+                to="/about"
                 data-cursor-hover
                 className="inline-flex items-center gap-2 rounded-full border border-line-strong px-5 py-3 text-sm font-medium hover:border-accent hover:text-accent transition-colors shrink-0"
               >
                 Full capability breakdown <ArrowUpRight size={14} />
-              </a>
+              </Link>
             </div>
             <p className="text-muted leading-relaxed mt-6 max-w-3xl">{flagship.body}</p>
             <div className="flex flex-wrap gap-2 mt-6">

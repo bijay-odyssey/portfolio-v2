@@ -4,6 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0a0a0a" />
+    <script type="text/javascript">
+      // Applies the saved theme before first paint, so there's no flash
+      // of the (dark) default before React mounts.
+      (function () {
+        try {
+          if (localStorage.getItem("theme") === "light") {
+            document.documentElement.setAttribute("data-theme", "light");
+          }
+        } catch (e) {}
+      })();
+    </script>
     <meta name="description" content="Bijaya Kumar Pariyar — AI/ML Engineer &amp; Data Scientist. Sole architect of a production AI underwriting platform with multi-LLM orchestration, RAG pipelines, and deterministic decision engines. Based in Kathmandu, Nepal." />
     <meta name="author" content="Bijaya Kumar Pariyar" />
 

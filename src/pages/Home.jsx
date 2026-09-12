@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, ArrowDown } from "lucide-react";
-import { profile, heroCopy, capabilities, projects, toolsGrid } from "../data/content.js";
+import { profile, heroCopy, capabilities, projects } from "../data/content.js";
 import Reveal from "../components/Reveal.jsx";
 import SectionTag from "../components/SectionTag.jsx";
-import Marquee from "../components/Marquee.jsx";
 import ProjectRow from "../components/ProjectRow.jsx";
 import GithubStats from "../components/GithubStats.jsx";
 import MagneticButton from "../components/MagneticButton.jsx";
@@ -98,10 +97,8 @@ export default function Home() {
         </motion.div>
       </section>
 
-      <Marquee items={toolsGrid.slice(0, 10)} />
-
       {/* INTRO / STORY TEASER */}
-      <section className="px-6 md:px-10 py-28 md:py-36">
+      <section className="px-6 md:px-10 py-28 md:py-36 border-t border-line">
         <div className="mx-auto max-w-[1400px]">
           <SectionTag index="( 01 )" label="Who I am" />
           <Reveal className="mt-8">

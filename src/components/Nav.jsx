@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import ThemeToggle from "./ThemeToggle.jsx";
 
 const links = [
   { to: "/", label: "Home", n: "00" },
@@ -59,16 +60,20 @@ export default function Nav() {
             >
               Say hello <ArrowUpRight size={14} />
             </a>
+            <ThemeToggle />
           </nav>
 
-          <button
-            onClick={() => setOpen((v) => !v)}
-            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full border border-line-strong"
-            aria-label="Toggle menu"
-            data-cursor-hover
-          >
-            {open ? <X size={18} /> : <Menu size={18} />}
-          </button>
+          <div className="flex items-center gap-3 md:hidden">
+            <ThemeToggle />
+            <button
+              onClick={() => setOpen((v) => !v)}
+              className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-line-strong"
+              aria-label="Toggle menu"
+              data-cursor-hover
+            >
+              {open ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </div>
         </div>
       </header>
 
